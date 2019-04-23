@@ -4,21 +4,32 @@
 
 module.exports = {
   config: {
+    hyperBorder: {
+      borderColors: ['#fc1da7', '#fba506'],
+      borderWidth: '2px',
+      borderRadiusOuter: '2px'
+    },
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: '"FiraCode", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
 
     // font weight for bold characters: 'normal' or 'bold'
     fontWeightBold: 'bold',
+
+    // line height as a relative unit
+    lineHeight: 1,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -76,10 +87,10 @@ module.exports = {
       cyan: '#20C5C6',
       white: '#C7C7C7',
       lightBlack: '#686868',
-      lightRed: '#FD6F6B',
+      lightRed: '#fc1da7',
       lightGreen: '#67F86F',
       lightYellow: '#FFFA72',
-      lightBlue: '#6A76FB',
+      lightBlue: '#7493fb',
       lightMagenta: '#FD7CFC',
       lightCyan: '#68FDFE',
       lightWhite: '#FFFFFF',
@@ -93,11 +104,11 @@ module.exports = {
     // - Remove `--login` in shellArgs
     //
     // Bash on Windows
-    // - Example: `C:\\Windows\\System32\\bash.exe`
+    // -Example: C:\\Windows\\System32\\bash.exe
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '/bin/zsh',
+    shell: 'C:\\Windows\\System32\\bash.exe',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -123,6 +134,7 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
   },
 
   // a list of plugins to fetch and install from npm
@@ -131,7 +143,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-material-theme"],
+  plugins: ['hyper-ligatures', 'hyper-named-css-colors', 'hyper-statusline', 'hyperborder'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -140,6 +152,6 @@ module.exports = {
 
   keymaps: {
     // Example
-    // 'window:devtools': 'cmd+alt+o',
+    'window:devtools': 'cmd+alt+o',
   },
 };
